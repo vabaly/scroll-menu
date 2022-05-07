@@ -1,0 +1,99 @@
+.scroll-menu {
+  position: fixed;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 10px;
+  padding-left: 27px;
+  max-height: 600px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: white;
+  overflow: auto;
+}
+
+.scroll-side-line {
+  content: "";
+  position: absolute;
+  width: 1px;
+  top: 16px;
+  bottom: 16px;
+  left: 12px;
+  background-color: #eaeaea;
+}
+
+.scroll-side-line::after,
+.scroll-side-line::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  border: 1px solid #eaeaea;
+  border-radius: 50%;
+}
+
+.scroll-side-line::before {
+  top: 0;
+  transform: translate(-50%, -100%);
+}
+
+.scroll-side-line::after {
+  bottom: 0;
+  transform: translate(-50%, 100%);
+}
+
+.scroll-menu-item-list {
+  padding-left: 16px;
+}
+
+.scroll-menu-item-title {
+  margin: 6px 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.scroll-menu-item-title[data-level="1"] {
+  font-weight: bold;
+  color: #666;
+}
+
+.scroll-menu-item-current-title {
+  position: relative;
+}
+
+.scroll-menu-item-current-title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 18px;
+  height: 13px;
+  top: 11px;
+  left: -4px;
+  transform: translate(-100%, -50%);
+  background: url("index.png") repeat scroll -271px -38px transparent;
+}
+
+.scroll-menu-item-current-title[data-level="2"]::before {
+  left: calc(-4px - 16px);
+}
+.scroll-menu-item-current-title[data-level="3"]::before {
+  left: calc(-4px - 16 * 2px);
+}
+.scroll-menu-item-current-title[data-level="4"]::before {
+  left: calc(-4px - 16 * 3px);
+}
+.scroll-menu-item-current-title[data-level="5"]::before {
+  left: calc(-4px - 16 * 4px);
+}
+.scroll-menu-item-current-title[data-level="2"]::before {
+  left: calc(-4px - 16px);
+}
+.scroll-menu-item-current-title[data-level="6"]::before {
+  left: calc(-4px - 16 * 5px);
+}
+.scroll-menu-item-current-title[data-level="7"]::before {
+  left: calc(-4px - 16 * 6px);
+}

@@ -1,0 +1,34 @@
+{
+  "name": "scroll-menu",
+  "version": "1.0.0",
+  "description": "可随着容器内的内容滚动而滚动的菜单栏",
+  "keywords": [
+    "scroll",
+    "menu"
+  ],
+  "author": "vabaly <love0and0life@gmail.com>",
+  "homepage": "https://github.com/vabaly/collections/tree/master/packages/scroll-menu#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vabaly/collections.git"
+  },
+  "scripts": {
+    "build": "tsc && cp src/index.css src/index.png lib",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/vabaly/collections/issues"
+  }
+}
