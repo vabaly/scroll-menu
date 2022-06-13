@@ -149,7 +149,7 @@ function scrollMenu (options: ScrollMenuOptions = {}): void {
       for (let index = 0; index < menuItems.length; index++) {
         const menuItem = menuItems[index]
         const { top } = menuItem.getBoundingClientRect()
-        if (top - containerElementTop > 0) {
+        if (Math.round(top - containerElementTop) > 0) {
           const prevIndex = index - 1 < 0 ? 0 : index - 1
           currentMenuItem = menuItems[prevIndex]
           break
@@ -169,7 +169,8 @@ function scrollMenu (options: ScrollMenuOptions = {}): void {
   const menuContainer = document.querySelector('.scroll-menu')
   menuContainer?.addEventListener('click', (event) => {
     const target = event.target as (HTMLElement | null)
-    const dataKey = target?.getAttribute('data-key')
+    const titleElement = target?.closest('[data-key]')
+    const dataKey = titleElement?.getAttribute('data-key')
     let containerElementTop = 0
     if (containerElement && 'getBoundingClientRect' in containerElement) {
       const { top } = containerElement.getBoundingClientRect()
